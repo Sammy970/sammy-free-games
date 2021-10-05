@@ -1,5 +1,5 @@
 import { Card, ListGroup } from "react-bootstrap";
-
+import "../styles/GameCard.css";
 function Game(props) {
   return (
     <div>
@@ -15,18 +15,21 @@ function Game(props) {
               href={props.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="url text-decoration-none text-dark"
+              className="url text-decoration-none text-dark title"
             >
               {props.title}
             </a>{" "}
           </Card.Title>
           <ListGroup variant="flush">
-            <ListGroup.Item>{props.publisher}</ListGroup.Item>
+            <ListGroup.Item className="publisher">
+              {props.publisher}
+            </ListGroup.Item>
             <ListGroup.Item>{props.desc}</ListGroup.Item>
             {/* <ListGroup.Item>Vestibulum at eros</ListGroup.Item> */}
           </ListGroup>
         </Card.Body>
-      </Card>
+      </Card>{" "}
+      <br />
     </div>
   );
 }
